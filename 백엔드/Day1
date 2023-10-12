@@ -1,0 +1,42 @@
+1. remote에서 local로 파일 불러오기
+ > git clone 레포주소
+
+2. git에 저장하기
+ > git add 파일이름 / git add .
+ > git commit -m '메모'
+ * git log : commit 목록 보기 (종료는 :q)
+
+3. local에서 remote로 밀어넣기
+ > git push
+
+4. branch 생성하기
+ > git branch 브랜치명
+ > git branch >> 브랜치 목록 확인
+ > git switch >> 브랜치 간 이동
+ > git branch -d 브랜치명 >> local 브랜치 삭제
+ > git push origin --delete 브랜치명
+
+4. 과거로 돌아가기
+ > git log에서 커밋 코드 찾기
+ > git reset 커밋코드 --hard
+ > 이후 git push origin +브랜치이름 으로 push하기
+
+5. merge
+ > main 브랜치로 이동
+ > git merge 브랜치명
+
+ *PR(pull-request) 날리고 merge하기
+  > 브랜치에서 push하면 github 상단에 pr 날리라고 떠있음(New pull request)
+  > PR을 요청하고 팀원이 코멘트를 달아주면 머지 가능
+
+6. 충돌
+ > main 을 최신버전으로 바꾸기
+  : git switch main 
+  : git pull
+ > 브랜치 위치 바꾸고 메인 머지해오기
+  : git switch 브랜치명
+  : git merge main
+ > 충돌난거 고치고 push
+ * remote코드와 local코드가 다를 때 push하면 기존 데이터 손실 경고 메세지 뜸
+  >> git push origin +main
+ 
